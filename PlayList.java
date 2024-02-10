@@ -42,8 +42,9 @@ class PlayList {
             else {
                 tracks[size] = track ;
                 size++;
+                return true;
             }
-        return true;
+
     }
 
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
@@ -110,12 +111,12 @@ class PlayList {
             tracks[i] = track;
         }
         else {
-            for (int j = size -1 ; j >= i ; j --) {
-                tracks[j+1] = tracks[j] ;
+            for (int j = size - 1 ; j >= i ; j --) {
+                tracks[ j + 1 ] = tracks[ j ] ;
             }
             tracks[i] = track ;
         }
-
+        size++;
         return true;
     }
      
@@ -128,8 +129,7 @@ class PlayList {
             return ;
         }
         tracks[i] = null ;
-
-        for (int j = i ; i < size - 1 ; i++ ){
+        for (int j = i ; j < size - 1 ; j++ ){
             tracks[j] = tracks [j+1] ;
         }
          size-- ;
@@ -163,7 +163,7 @@ class PlayList {
         //// replace this comment with your code
 
          int maxSizeOfBoth = size + other.size ;
-         if (maxSizeOfBoth < maxSize ){
+         if (maxSizeOfBoth <= maxSize ){
              int place = 0 ;
              for (int i = size ; i < maxSizeOfBoth ; i++ ){
                  tracks[i] = other.tracks[place];
