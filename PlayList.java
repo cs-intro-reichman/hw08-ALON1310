@@ -161,8 +161,9 @@ class PlayList {
     //// An elegant and terribly inefficient implementation.
      public void add(PlayList other) {
         //// replace this comment with your code
+
          int maxSizeOfBoth = size + other.size ;
-         if (maxSizeOfBoth <= maxSize ){
+         if (maxSizeOfBoth < maxSize ){
              int place = 0 ;
              for (int i = size ; i < maxSizeOfBoth ; i++ ){
                  tracks[i] = other.tracks[place];
@@ -170,6 +171,7 @@ class PlayList {
              }
              size = maxSizeOfBoth ;
          }
+
     }
 
     /** Returns the index in this list of the track that has the shortest duration,
