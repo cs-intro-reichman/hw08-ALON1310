@@ -109,6 +109,8 @@ class PlayList {
         }
         if (tracks[i] == null) {
             tracks[i] = track;
+            // you should have done here return;
+            // and then you won't need to do everything other inside else
         }
         else {
             for (int j = size - 1 ; j >= i ; j --) {
